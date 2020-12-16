@@ -1,0 +1,44 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Page content
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-page-content"
+
+#{$block}
+  position: relative
+  z-index: 1
+  display: block
+  width: 100%
+
+
+  // $Page content inner
+  &__inner
+    position: relative
+    z-index: 1
+    display: block
+    width: 100%
+    max-width: 1000px
+    margin: 0 auto
+    padding: 40px 20px
+
+    #{$block}__modal &
+      padding-top: 0
+      padding-bottom: 0
+
+    +media-screen-max-s-major
+      padding-left: 15px
+      padding-right: 15px
+
+    +media-screen-max-s-minor
+      padding-left: 10px
+      padding-right: 10px

@@ -1,0 +1,110 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Error message
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-error"
+
+#{$block}
+  display: block
+  position: relative
+  padding: 5px 10px 5px 30px
+  border-radius: 2px
+  background-color: $c-red-medium
+  text-align: left
+
+  &:before
+    content: "\e912"
+    position: absolute
+    top: 10px
+    left: 10px
+    display: block
+    font-family: icons
+    font-size: 10px
+    line-height: 1
+    color: $c-white
+
+  // $Error message MOD: type general
+  &_type_general
+    padding: 15px 15px 15px 40px
+    margin-bottom: 30px
+
+    &:before
+      top: 18px
+      left: 15px
+      font-size: 14px
+
+  // $Error message MOD: position top
+  &_position_top
+    margin-bottom: 10px
+
+  // $Error message MOD: position top MOD: type general
+  &_position_top#{&}_type_general
+    margin-bottom: 20px
+
+  // $Error message MOD: position bottom
+  &_position_bottom
+    margin-top: 10px
+
+  // $Error message MOD: position bottom MOD: type general
+  &_position_bottom#{&}_type_general
+    margin-top: 20px
+
+
+  // $Error message text
+  &__text
+    position: relative
+    display: block
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1.25
+    font-weight: 400
+    color: $c-white
+
+    &:not(:last-child)
+      margin-bottom: 4px
+
+    & ~ &
+      margin-top: 5px
+
+
+  // $Note text bold
+  &__text-bold
+    font-weight: 800
+
+
+  // $Note text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Note text line
+  &__text-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+    &_pointer_dash
+      &:before
+        content: "\2013"
+        display: inline-block
+        margin-right: 5px
+
+
+  // $Note text link
+  &__text-link
+    color: inherit
+    text-decoration: underline
+
+    &:hover
+      text-decoration: none

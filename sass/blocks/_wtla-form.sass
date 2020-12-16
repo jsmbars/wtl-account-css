@@ -1,0 +1,243 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Form
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-form"
+
+#{$block}
+  display: block
+  width: 100%
+  text-align: left
+
+
+  // $Form row
+  &__row
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+    margin-bottom: 20px
+
+    // $Form row MOD: justify center
+    &_justify_center
+      justify-content: center
+
+    // $Form row MOD: justify end
+    &_justify_end
+      justify-content: flex-end
+
+    // $Form row MOD: justify space
+    &_justify_space
+      justify-content: space-between
+
+    // $Form row MOD: align center
+    &_align_center
+      align-items: center
+
+    // $Form row MOD: align end
+    &_align_end
+      align-items: flex-end
+
+    &_wrap_m-major
+      +media-screen-max-m-major
+        flex-direction: column
+
+    &_wrap_s-major
+      +media-screen-max-s-major
+        flex-direction: column
+
+    &_wrap_xs
+      +media-screen-max-xs
+        flex-direction: column
+
+    // $Form row MOD: position last
+    &:last-child,
+    &_position_last
+      margin-bottom: 0
+
+
+  // $Form group
+  // $Form field
+  &__group,
+  &__field
+    position: relative
+    display: block
+    width: 100%
+    margin-bottom: 20px
+
+    // $Form group MOD: size half
+    // $Form field MOD: size half
+    &_size_half
+      flex-grow: 0
+      flex-shrink: 1
+      width: 50%
+
+    // $Form group MOD: size max
+    // $Form field MOD: size max
+    &_size_max
+      flex-grow: 1
+      flex-shrink: 1
+      width: auto
+
+    // $Form group MOD: size min
+    // $Form field MOD: size min
+    &_size_min
+      flex-grow: 0
+      flex-shrink: 1
+      width: auto
+
+    &_size_half,
+    &_size_max,
+    &_size_min
+      margin-bottom: 0
+      margin-right: 20px
+
+      +media-screen-max-m-major
+        #{$block}__row_wrap_m-major > &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
+          margin-right: 0
+          margin-bottom: 20px
+
+      +media-screen-max-s-major
+        #{$block}__row_wrap_s-major > &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
+          margin-right: 0
+          margin-bottom: 20px
+
+      +media-screen-max-xs
+        #{$block}__row_wrap_xs > &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
+          margin-right: 0
+          margin-bottom: 20px
+
+    // $Form field: MOD: adjust no label
+    &_adjust_no-label
+      padding-top: 24px
+
+      +media-screen-max-m-major
+        #{$block}__row_wrap_m-major > &
+          padding-top: 0
+
+      +media-screen-max-s-major
+        #{$block}__row_wrap_s-major > &
+          padding-top: 0
+
+      +media-screen-max-xs
+        #{$block}__row_wrap_xs > &
+          padding-top: 0
+
+    // $Form field: MOD: position last
+    &:last-child,
+    &_position_last
+      margin-right: 0
+      margin-bottom: 0
+
+      +media-screen-max-m-major
+        #{$block}__row_wrap_m-major > &
+          margin-right: 0
+          margin-bottom: 0
+
+      +media-screen-max-s-major
+        #{$block}__row_wrap_s-major > &
+          margin-right: 0
+          margin-bottom: 0
+
+      +media-screen-max-xs
+        #{$block}__row_wrap_xs > &
+          margin-right: 0
+          margin-bottom: 0
+
+
+  // $Form actions
+  &__actions
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 100%
+
+    // $Form actions MOD: justify start
+    &_justify_start
+      justify-content: flex-start
+
+    // $Form actions MOD: justify end
+    &_justify_end
+      justify-content: flex-end
+
+
+  // $Form action
+  &__action
+    flex-grow: 0
+    flex-shrink: 1
+
+    &:not(:last-child)
+      margin-right: 20px
+
+
+  // $Form text
+  &__text
+    display: block
+    width: 100%
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1
+    font-weight: 400
+    color: $c-gray-ultra-dark
+
+    // $Form row MOD: justify center
+    &_justify_center
+      text-align: center
+
+    // $Form row MOD: justify end
+    &_justify_end
+      text-align: right
+
+
+  // $Form text bold
+  &__text-bold
+    font-weight: 600
+
+
+  // $Form text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Modal window link
+  &__link
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1
+    font-weight: 400
+    color: $c-primary-medium
+    text-decoration: none
+    opacity: 1
+    transition: all .3s
+
+    &:hover
+      opacity: 0.75
+
+    // $Modal window link NOD: type inline
+    &_type_inline
+      font-size: inherit
+      text-decoration: underline
+
+      &:hover
+        text-decoration: none
+        opacity: 1

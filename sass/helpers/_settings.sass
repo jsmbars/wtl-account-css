@@ -1,0 +1,167 @@
+////////////////////////////////////////
+// Project variables
+////////////////////////////////////////
+
+// Common breakpoints
+$breakpoint-xl: 1360px
+
+$breakpoint-l-minor: 1120px
+$breakpoint-l-major: 1280px
+
+$breakpoint-m-minor: 800px
+$breakpoint-m-major: 960px
+
+$breakpoint-s-minor: 480px
+$breakpoint-s-major: 640px
+
+$breakpoint-xs: 400px
+
+//////////////////////////////////////// Colors
+
+@function shade($color, $percentage)
+  @return mix(black, $color, $percentage)
+
+@function tint($color, $percentage)
+  @return mix(white, $color, $percentage)
+
+// Main colors
+
+// Primary
+$c-primary-medium: #5070b1
+
+$c-primary-dark: shade($c-primary-medium, 20%)
+$c-primary-extra-dark: shade($c-primary-medium, 40%)
+$c-primary-ultra-dark: shade($c-primary-medium, 60%)
+
+$c-primary-light: tint($c-primary-medium, 40%)
+$c-primary-extra-light: tint($c-primary-medium, 60%)
+$c-primary-ultra-light: tint($c-primary-medium, 80%)
+$c-primary-hyper-light: tint($c-primary-medium, 90%)
+
+// Secondary
+$c-secondary-medium: #00d1c3
+
+$c-secondary-dark: shade($c-secondary-medium, 20%)
+$c-secondary-extra-dark: shade($c-secondary-medium, 40%)
+$c-secondary-ultra-dark: shade($c-secondary-medium, 60%)
+
+$c-secondary-light: tint($c-secondary-medium, 40%)
+$c-secondary-extra-light: tint($c-secondary-medium, 60%)
+$c-secondary-ultra-light: tint($c-secondary-medium, 80%)
+$c-secondary-hyper-light: tint($c-secondary-medium, 90%)
+
+// Gray
+$c-gray-medium: #aaaaaa
+
+$c-gray-dark: shade($c-gray-medium, 30%)
+$c-gray-extra-dark: shade($c-gray-medium, 60%)
+$c-gray-ultra-dark: shade($c-gray-medium, 80%)
+$c-gray-hyper-dark: shade($c-gray-medium, 90%)
+$c-black: shade($c-gray-medium, 100%)
+
+$c-gray-light: tint($c-gray-medium, 30%)
+$c-gray-extra-light: tint($c-gray-medium, 60%)
+$c-gray-ultra-light: tint($c-gray-medium, 80%)
+$c-gray-hyper-light: tint($c-gray-medium, 90%)
+$c-white: tint($c-gray-medium, 100%)
+
+
+// Service colors
+
+// Pink
+$c-pink-medium: #ff66cc
+
+$c-pink-dark: shade($c-pink-medium, 20%)
+$c-pink-extra-dark: shade($c-pink-medium, 40%)
+$c-pink-ultra-dark: shade($c-pink-medium, 60%)
+
+$c-pink-light: tint($c-pink-medium, 40%)
+$c-pink-extra-light: tint($c-pink-medium, 60%)
+$c-pink-ultra-light: tint($c-pink-medium, 80%)
+$c-pink-hyper-light: tint($c-pink-medium, 90%)
+
+// Red
+$c-red-medium: #ff6666
+
+$c-red-dark: shade($c-red-medium, 20%)
+$c-red-extra-dark: shade($c-red-medium, 40%)
+$c-red-ultra-dark: shade($c-red-medium, 60%)
+
+$c-red-light: tint($c-red-medium, 40%)
+$c-red-extra-light: tint($c-red-medium, 60%)
+$c-red-ultra-light: tint($c-red-medium, 80%)
+$c-red-hyper-light: tint($c-red-medium, 90%)
+
+// Orange
+$c-orange-medium: #ff9966
+
+$c-orange-dark: shade($c-orange-medium, 20%)
+$c-orange-extra-dark: shade($c-orange-medium, 40%)
+$c-orange-ultra-dark: shade($c-orange-medium, 60%)
+
+$c-orange-light: tint($c-orange-medium, 40%)
+$c-orange-extra-light: tint($c-orange-medium, 60%)
+$c-orange-ultra-light: tint($c-orange-medium, 80%)
+$c-orange-hyper-light: tint($c-orange-medium, 90%)
+
+// Yellow
+$c-yellow-medium: #ffcc66
+
+$c-yellow-dark: shade($c-yellow-medium, 20%)
+$c-yellow-extra-dark: shade($c-yellow-medium, 40%)
+$c-yellow-ultra-dark: shade($c-yellow-medium, 60%)
+
+$c-yellow-light: tint($c-yellow-medium, 40%)
+$c-yellow-extra-light: tint($c-yellow-medium, 60%)
+$c-yellow-ultra-light: tint($c-yellow-medium, 80%)
+$c-yellow-hyper-light: tint($c-yellow-medium, 90%)
+
+// Green
+$c-green-medium: #66cc66
+
+$c-green-dark: shade($c-green-medium, 20%)
+$c-green-extra-dark: shade($c-green-medium, 40%)
+$c-green-ultra-dark: shade($c-green-medium, 60%)
+
+$c-green-light: tint($c-green-medium, 40%)
+$c-green-extra-light: tint($c-green-medium, 60%)
+$c-green-ultra-light: tint($c-green-medium, 80%)
+$c-green-hyper-light: tint($c-green-medium, 90%)
+
+// Blue
+$c-blue-medium: #6699ff
+
+$c-blue-dark: shade($c-blue-medium, 20%)
+$c-blue-extra-dark: shade($c-blue-medium, 40%)
+$c-blue-ultra-dark: shade($c-blue-medium, 60%)
+
+$c-blue-light: tint($c-blue-medium, 40%)
+$c-blue-extra-light: tint($c-blue-medium, 60%)
+$c-blue-ultra-light: tint($c-blue-medium, 80%)
+$c-blue-hyper-light: tint($c-blue-medium, 90%)
+
+// Purple
+$c-purple-medium: #9966ff
+
+$c-purple-dark: shade($c-purple-medium, 20%)
+$c-purple-extra-dark: shade($c-purple-medium, 40%)
+$c-purple-ultra-dark: shade($c-purple-medium, 60%)
+
+$c-purple-light: tint($c-purple-medium, 40%)
+$c-purple-extra-light: tint($c-purple-medium, 60%)
+$c-purple-ultra-light: tint($c-purple-medium, 80%)
+$c-purple-hyper-light: tint($c-purple-medium, 90%)
+
+// Common shadow color
+$c-shadow-primary: rgba(0,0,0, .25)
+
+
+//////////////////////////////////////// Fonts
+
+// Common fonts
+$f-sans: 'Montserrat', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif
+
+
+//////////////////////////////////////// Base64 assets
+
+// Common icons

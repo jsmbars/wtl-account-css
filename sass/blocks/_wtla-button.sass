@@ -1,0 +1,107 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Button
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+// $button-size-name, $button-height, $button-padding
+$button-sizes: ("xxs" 25px 10px, "xs" 30px 15px, "s" 35px 20px, "m" 40px 25px, "l" 45px 30px, "xl" 50px 35px, "xxl" 55px 40px)
+
+// $button-gray-color-name, $button-gray-color-value
+$button-gray-colors: ("gray-extra-dark" $c-gray-extra-dark, "gray-dark" $c-gray-dark, "gray-medium" $c-gray-medium, "gray-light" $c-gray-light, "gray-extra-light" $c-gray-extra-light)
+
+// $button-accent-medium-color-name, $button-accent-medium-color-value
+$button-accent-medium-colors: ("pink-medium" $c-pink-medium, "red-medium" $c-red-medium, "orange-medium" $c-orange-medium, "yellow-medium" $c-yellow-medium, "green-medium" $c-green-medium, "blue-medium" $c-blue-medium, "purple-medium" $c-purple-medium, "primary-medium" $c-primary-medium, "secondary-medium" $c-secondary-medium)
+
+
+//////////////////////////////////////// Block mixins and functions
+
+=button-common($color: $c-white, $background-color: $c-primary-medium, $border-radius: null)
+  color: $color
+  background-color: $background-color
+
+  @if $border-radius
+    border-radius: $border-radius
+
+
+=button-common-hover($background-color: $c-primary-medium, $amount: 5%)
+  &:hover
+    background-color: lighten($background-color, $amount)
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-button"
+
+#{$block}
+  +button-common()
+  +button-common-hover()
+  display: inline-block
+  height: 40px
+  padding: 0 25px
+  border-radius: 4px
+  font-family: $f-sans
+  font-size: 14px
+  line-height: 40px
+  font-weight: 400
+  white-space: nowrap
+  vertical-align: middle
+  text-align: center
+  text-transform: inherit
+  text-decoration: none
+  outline: none
+  cursor: pointer
+  border: none
+  transition: all .3s
+
+  &:focus
+    outline: none
+
+  // $Button STATE: disabled
+  &.is-disabled,
+  &:disabled,
+  &[disabled],
+    background-color: $c-gray-extra-light !important
+    color: $c-gray-medium !important
+    cursor: not-allowed
+
+    &:hover,
+    &:focus
+      background-color: $c-gray-extra-light !important
+      color: $c-gray-medium !important
+
+  // Size modifiers
+  @each $button-size-name, $button-height, $button-padding in $button-sizes
+    &_size_#{$button-size-name}
+      height: $button-height
+      padding: 0 $button-padding
+      line-height: $button-height
+
+  // Gray color modifiers
+  @each $button-gray-color-name, $button-gray-color-value in $button-gray-colors
+    &_color_#{$button-gray-color-name}
+      @if $button-gray-color-name == "gray-light" or $button-gray-color-name == "gray-extra-light"
+        +button-common($color: $c-gray-ultra-dark, $background-color: $button-gray-color-value)
+      @else
+        +button-common($color: $c-white, $background-color: $button-gray-color-value)
+
+      +button-common-hover($background-color: $button-gray-color-value)
+
+  // Accent medium color modifiers
+  @each $button-accent-medium-color-name, $button-accent-medium-color-value in $button-accent-medium-colors
+    &_color_#{$button-accent-medium-color-name}
+      +button-common($color: $c-white, $background-color: $button-accent-medium-color-value)
+      +button-common-hover($background-color: $button-accent-medium-color-value)
+
+
+  // $Button text
+  &__text
+    display: inline-block
+    font-size: inherit
+    font-weight: inherit
+    line-height: inherit
+    color: inherit
+    text-transform: inherit
+    vertical-align: middle

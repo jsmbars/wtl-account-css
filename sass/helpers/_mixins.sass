@@ -1,0 +1,107 @@
+// DEV MIXINS
+=testbg($red: 255, $green: 0, $blue: 0, $alpha: 0.3)
+  background-color: rgba($red, $green, $blue, $alpha)
+
+
+=testbd($width: 1px, $line-type: solid, $color: green)
+  border: $width $line-type $color
+
+
+=testout($width: 1px, $line-type: solid, $color: blue)
+  outline: $width $line-type $color
+
+
+=testcount($element: "*", $depth: 1)
+  counter-reset: test-counter
+
+  %counter-number
+    position: absolute
+    top: 5px
+    right: 5px
+    z-index: 100
+    counter-increment: test-counter
+    content: counter(test-counter)
+    display: block
+    font-size: 12px !important
+    line-height: 1 !important
+    font-weight: normal !important
+    color: red !important
+
+  @if $depth == 1
+    & > #{$element}
+      position: relative
+
+      &:before
+        @extend %counter-number
+
+  @else
+    & #{$element}
+      position: relative
+
+      &:before
+        @extend %counter-number
+
+// Common breakpoints
+=media-screen-max-xl($breakpoint: $breakpoint-xl)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-screen-min-xl($breakpoint: $breakpoint-xl)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-screen-max-l-minor($breakpoint: $breakpoint-l-minor)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-screen-min-l-minor($breakpoint: $breakpoint-l-minor)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-screen-max-l-major($breakpoint: $breakpoint-l-major)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-screen-min-l-major($breakpoint: $breakpoint-l-major)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-screen-max-m-minor($breakpoint: $breakpoint-m-minor)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-screen-min-m-minor($breakpoint: $breakpoint-m-minor)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-screen-max-m-major($breakpoint: $breakpoint-m-major)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-screen-min-m-major($breakpoint: $breakpoint-m-major)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-screen-max-s-minor($breakpoint: $breakpoint-s-minor)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-screen-min-s-minor($breakpoint: $breakpoint-s-minor)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-screen-max-s-major($breakpoint: $breakpoint-s-major)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-screen-min-s-major($breakpoint: $breakpoint-s-major)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-screen-max-xs($breakpoint: $breakpoint-xs)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-screen-min-xs($breakpoint: $breakpoint-xs)
+  @media screen and (min-width: $breakpoint + 1)
+    @content

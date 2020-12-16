@@ -1,0 +1,73 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Page header
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-page-header"
+
+#{$block}
+  position: relative
+  z-index: 1
+  display: block
+  width: 100%
+  background-color: $c-gray-hyper-dark
+
+
+  // $Page header inner
+  &__inner
+    display: block
+    width: 100%
+    max-width: 1000px
+    margin: 0 auto
+    padding: 10px 20px
+
+    +media-screen-max-s-major
+      padding-left: 15px
+      padding-right: 15px
+
+    +media-screen-max-s-minor
+      padding-left: 10px
+      padding-right: 10px
+
+
+  // $Page header group
+  &__group
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 100%
+
+
+  // $Page header info
+  &__info
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    text-align: center
+
+
+  // $Page header logo
+  &__logo
+    display: inline-block
+    text-decoration: none
+    vertical-align: top
+
+    &:focus
+      outline: none
+
+
+  // $Page header logo image
+  &__logo-image
+    display: block
+    height: 40px

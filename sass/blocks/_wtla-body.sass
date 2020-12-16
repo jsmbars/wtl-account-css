@@ -1,0 +1,28 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Body
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-body"
+
+#{$block}
+  position: relative
+  display: block
+  width: 100%
+  background-color: $c-gray-hyper-dark
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  background-attachment: fixed
+
+  @media screen and (max-device-width: 480px)
+    text-size-adjust: none
