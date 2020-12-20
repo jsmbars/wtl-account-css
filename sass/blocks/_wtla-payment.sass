@@ -1,0 +1,205 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Payment
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-payment"
+
+#{$block}
+  display: block
+  width: 100%
+
+
+  // $Payment group
+  &__group
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Payment title
+  &__title
+    display: block
+    font-family: $f-sans
+    font-size: 16px
+    line-height: 1
+    font-weight: 600
+    color: $c-gray-ultra-dark
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Payment list
+  &__list
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Payment note
+  &__note
+    display: block
+    width: 100%
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 400
+    color: $c-gray-ultra-dark
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Payment note light
+  &__note-light
+    font-weight: 300
+
+
+  // $Payment note bold
+  &__note-bold
+    font-weight: 600
+
+
+  // $Payment placeholder
+  &__placeholder
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Payment placeholder text
+  &__placeholder-text
+    display: block
+    width: 100%
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1
+    color: $c-gray-dark
+
+
+  // $Payment card
+  &__card
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    padding: 15px
+    border: 1px solid $c-gray-extra-light
+    transition: all .3s
+
+    +media-screen-max-xs
+      padding: 10px
+
+    &:hover
+      background-color: $c-primary-hyper-light
+
+    &:not(:last-child)
+      border-bottom: none
+
+    // $Payment card STATE: expired
+    &.is-expired
+      border-color: $c-red-extra-light
+
+      &:hover
+        background-color: $c-red-hyper-light
+
+
+  // $Payment card icon
+  &__card-icon
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    margin-right: 10px
+
+    &:before
+      content: ''
+      display: block
+      font-family: icons
+      font-size: 40px
+      line-height: 30px
+      color: $c-gray-extra-dark
+
+      #{$block}__card.is-expired &
+        color: $c-red-medium
+
+    // $Payment card icon MOD: visa
+    &_visa
+      &:before
+        content: '\e921'
+
+    // $Payment card icon MOD: mastercard
+    &_mastercard
+      &:before
+        content: '\e91e'
+
+
+  // $Payment card information
+  &__card-info
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+
+
+  // $Payment card name
+  &__card-name
+    display: block
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1
+    font-weight: 400
+    color: $c-gray-ultra-dark
+
+    #{$block}__card.is-expired &
+      color: $c-red-medium
+
+
+  // $Payment card delete
+  &__card-delete
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    width: 30px
+    height: 30px
+    margin: 0
+    padding: 0
+    font-size: 0
+    line-height: 0
+    color: transparent
+    text-decoration: none
+    white-space: nowrap
+    text-align: center
+    border: none
+    background-color: transparent
+    cursor: pointer
+    transition: all .3s
+
+    &:hover
+      text-decoration: none
+      opacity: .75
+
+    &:focus
+      outline: none
+
+    &:before
+      content: '\e908'
+      display: inline-block
+      font-family: icons
+      font-size: 14px
+      line-height: 20px
+      color: $c-red-medium

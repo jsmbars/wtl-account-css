@@ -21,6 +21,52 @@ $block: ".wtla-page-content"
   width: 100%
 
 
+  // $Page header intro
+  &__intro
+    position: relative
+    z-index: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    min-height: 180px
+    overflow: hidden
+
+    +media-screen-max-l-major
+      min-height: 150px
+
+    +media-screen-max-m-major
+      min-height: 120px
+
+    +media-screen-max-s-major
+      min-height: 90px
+
+
+  // $Page content background
+  &__background
+    position: absolute
+    top: -10px
+    right: -10px
+    bottom: -10px
+    left: -10px
+    z-index: -1
+    display: block
+    background-color: $c-gray-medium
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+    background-attachment: fixed
+
+
+  // $Page content section
+  &__section
+    position: relative
+    z-index: 1
+    display: block
+    width: 100%
+
+
   // $Page content inner
   &__inner
     position: relative
@@ -42,3 +88,59 @@ $block: ".wtla-page-content"
     +media-screen-max-s-minor
       padding-left: 10px
       padding-right: 10px
+
+
+  // $Page header title
+  &__title
+    display: block
+    font-family: $f-sans
+    font-size: 40px
+    line-height: 1
+    font-weight: 600
+    color: $c-white
+    text-shadow: 0 1px 2px rgba(0,0,0,.5)
+    text-align: center
+
+    +media-screen-max-l-major
+      font-size: 36px
+
+    +media-screen-max-m-major
+      font-size: 32px
+
+    +media-screen-max-s-major
+      font-size: 28px
+
+    &:not(:last-child)
+      &:after
+        content: ''
+        display: block
+        width: 240px
+        height: 2px
+        margin: 20px auto
+        border-bottom: 1px solid $c-gray-hyper-light
+
+        +media-screen-max-s-major
+          width: 120px
+          margin-top: 10px
+          margin-bottom: 10px
+
+
+  // $Page header sub title
+  &__sub-title
+    display: block
+    font-family: $f-sans
+    font-size: 30px
+    line-height: 1
+    font-weight: 400
+    color: $c-white
+    text-shadow: 0 1px 2px rgba(0,0,0,.5)
+    text-align: center
+
+    +media-screen-max-l-major
+      font-size: 28px
+
+    +media-screen-max-m-major
+      font-size: 26px
+
+    +media-screen-max-s-major
+      font-size: 24px

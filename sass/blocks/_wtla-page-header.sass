@@ -71,3 +71,85 @@ $block: ".wtla-page-header"
   &__logo-image
     display: block
     height: 40px
+
+
+  // $Page header action
+  &__action
+    display: inline-block
+    white-space: nowrap
+    font-family: $f-sans
+    font-size: 16px
+    line-height: 1
+    color: $c-white
+    border: none
+    background-color: transparent
+    cursor: pointer
+    transition: all .3s
+
+    +media-screen-max-s-major
+      font-size: 14px
+
+    &:before,
+    &:after
+      display: inline-block
+      font-family: icons
+      color: $c-gray-ultra-light
+      vertical-align: middle
+      transition: .3s
+
+    &:before
+      margin-right: 10px
+
+    &:after
+      margin-left: 10px
+
+    &:hover
+      color: $c-secondary-medium
+
+      &:before,
+      &:after
+        color: $c-secondary-medium
+
+    &:focus
+      outline: none
+
+    // $Page header action MOD: role previous
+    &_role_previous
+      position: absolute
+      top: 50%
+      left: 0
+      text-align: left
+      transform: translateY(-50%)
+
+      &:before
+        content: '\e911'
+        font-size: 30px
+        line-height: 30px
+
+        +media-screen-max-s-major
+          font-size: 25px
+
+    // $Page header action MOD: role logout
+    &_role_logout
+      position: absolute
+      top: 50%
+      right: 0
+      text-align: right
+      transform: translateY(-50%)
+
+      &:after
+        content: '\e91d'
+        font-size: 15px
+        line-height: 30px
+
+
+  // $Page header action text
+  &__action-text
+    display: inline-block
+    font-family: inherit
+    font-size: inherit
+    line-height: inherit
+    color: inherit
+    vertical-align: middle
+    white-space: normal
+
