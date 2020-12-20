@@ -1,0 +1,248 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Table
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-table"
+
+#{$block}
+  position: relative
+  display: block
+  width: 100%
+
+  // $Table MOD: role order history
+  &_role_order-history
+
+  // $Table MOD: role order details
+  &_role_order-details
+
+  // $Table MOD: role order details summary
+  &_role_order-details-summary
+    max-width: 300px
+
+
+  // $Table row
+  &__row
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: stretch
+    width: 100%
+    background-color: $c-white
+
+    &:not(:last-child)
+      #{$block}_role_order-details-summary &
+        border-bottom: 1px solid $c-gray-extra-light
+
+    // $Table row MOD: role header
+    // $Table row MOD: role footer
+    &_role_header,
+    &_role_footer
+      background-color: $c-gray-hyper-light
+
+
+  // $Table cell
+  &__cell
+    position: relative
+    flex-grow: 1
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    min-height: 50px
+    padding: 15px 10px
+    border-right: 1px solid $c-gray-light
+    border-bottom: 1px solid $c-gray-light
+
+    #{$block}_role_order-details-summary &
+      min-height: 0
+      padding: 10px 0
+      border-right: none
+      border-bottom: none
+
+    #{$block}_role_order-details-summary #{$block}__row:first-child &
+      padding-top: 0
+
+    #{$block}_role_order-details-summary #{$block}__row:last-child &
+      padding-bottom: 0
+
+    +media-screen-max-s-major
+      #{$block}_role_order-details &
+        padding-right: 5px
+        padding-left: 5px
+
+    +media-screen-max-xs
+      #{$block}_role_order-details &
+        font-size: 12px
+
+    &:first-child
+      border-left: 1px solid $c-gray-light
+
+      #{$block}_role_order-details-summary &
+        border-left: none
+
+    &:last-child
+      border-right: 1px solid $c-gray-light
+
+      #{$block}_role_order-details-summary &
+        border-right: none
+
+    // $Table cell first column
+    &:nth-child(1)
+      #{$block}_role_order-history &
+        width: 36%
+
+      #{$block}_role_order-details &
+        justify-content: center
+        text-align: center
+        width: 15%
+
+      #{$block}_role_order-details-summary &
+        width: 45%
+
+      +media-screen-max-s-major
+        #{$block}_role_order-details &
+          flex-grow: 0
+          flex-shrink: 0
+          width: 80px
+
+      +media-screen-max-xs
+        #{$block}_role_order-details &
+          width: 65px
+
+    // $Table cell second column
+    &:nth-child(2)
+      #{$block}_role_order-history &
+        width: 30%
+
+      #{$block}_role_order-details &
+        width: 65%
+
+      #{$block}_role_order-details-summary &
+        justify-content: flex-end
+        text-align: right
+        width: 55%
+
+      +media-screen-max-s-major
+        #{$block}_role_order-details &
+          width: calc(100% - 160px)
+
+      +media-screen-max-xs
+        #{$block}_role_order-details &
+          width: calc(100% - 140px)
+
+    // $Table cell third column
+    &:nth-child(3)
+      #{$block}_role_order-history &
+        width: 18%
+
+      #{$block}_role_order-details &
+        width: 20%
+
+      +media-screen-max-s-major
+        #{$block}_role_order-details &
+          flex-grow: 0
+          flex-shrink: 0
+          width: 80px
+
+      +media-screen-max-xs
+        #{$block}_role_order-details &
+          width: 75px
+
+    // $Table cell fourth column
+    &:nth-child(4)
+      #{$block}_role_order-history &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 100px
+
+    // $Table cell MOD: role header
+    // $Table cell MOD: role footer
+    &_role_header,
+    &_role_footer
+      font-size: 14px
+      font-family: $f-sans
+      font-weight: 600
+      color: $c-gray-ultra-dark
+
+    &_role_header
+      border-top: 1px solid $c-gray-light
+
+    &_role_footer
+      &:nth-child(1)
+        #{$block}_role_order-details &
+          border-right: none
+
+      &:nth-child(2)
+        #{$block}_role_order-details &
+          justify-content: flex-end
+          text-align: right
+          border-right: none
+
+
+  // $Table info
+  &__info
+    flex-grow: 1
+    flex-shrink: 1
+    width: 100%
+
+
+  // $Table text
+  &__text
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 400
+    color: $c-gray-ultra-dark
+
+    #{$block}_role_order-details-summary #{$block}__cell:nth-child(1) &
+      font-weight: 600
+
+    #{$block}_role_order-details-summary #{$block}__cell:nth-child(2) &
+      font-weight: 300
+
+    +media-screen-max-xs
+      #{$block}_role_order-details &
+        font-size: 12px
+
+      #{$block}_role_order-details-summary &
+        font-size: 13px
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+    &_adjust_wrap
+      word-wrap: break-word
+      hyphens: auto
+
+
+  // $Table text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Table text bold
+  &__text-bold
+    font-weight: 600
+
+
+  // $Table actions
+  &__actions
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+
+  // $Table action
+  &__action
+
+    &:not(:last-child)
+      margin-right: 15px

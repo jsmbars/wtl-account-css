@@ -1,0 +1,158 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Panel
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-panel"
+
+#{$block}
+  position: relative
+  display: block
+  width: 100%
+  overflow: hidden
+  background-color: $c-white
+  border-radius: 8px
+
+  &:not(:last-child)
+    margin-bottom: 20px
+
+  // $Panel MOD: role order history
+  &_role_order-history
+    border: 1px solid $c-gray-light
+    text-align: center
+
+
+  // $Panel header
+  &__header
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    padding: 15px 20px
+    border-bottom: 1px solid $c-gray-extra-light
+
+    +media-screen-max-s-minor
+      padding: 10px 15px
+
+
+  // $Panel content
+  &__content
+    display: block
+    width: 100%
+
+
+  // $Panel footer
+  &__footer
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    padding: 15px 20px
+    border-top: 1px solid $c-gray-extra-light
+
+    +media-screen-max-s-minor
+      padding: 10px 15px
+
+  // $Panel group
+  &__group
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      border-bottom: 1px solid $c-gray-extra-light
+
+
+  // $Panel group inner
+  &__group-inner
+    display: block
+    width: 100%
+    padding: 15px 20px
+
+    +media-screen-max-s-minor
+      padding: 10px 15px
+
+
+  // $Panel actions
+  &__actions
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 100%
+
+    // $Panel actions MOD: justify start
+    &_justify_start
+      justify-content: flex-start
+
+    // $Panel actions MOD: justify end
+    &_justify_end
+      justify-content: flex-end
+
+
+  // $Panel action
+  &__action
+    flex-grow: 0
+    flex-shrink: 1
+
+    &:not(:last-child)
+      margin-right: 20px
+
+
+  // $Panel title
+  &__title
+    font-family: $f-sans
+    font-size: 18px
+    line-height: 1
+    font-weight: 600
+    color: $c-gray-ultra-dark
+
+    #{$block}_role_order-history &
+      width: 100%
+      max-width: 100%
+      text-align: center
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+  // $Panel text
+  &__text
+    display: block
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 400
+    color: $c-gray-ultra-dark
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+    // $Panel text MOD: size small
+    &_size_s
+      font-size: 12px
+
+    // $Panel text MOD: size large
+    &_size_l
+      font-size: 16px
+
+
+  // $Panel text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Panel text bold
+  &__text-bold
+    font-weight: 600
