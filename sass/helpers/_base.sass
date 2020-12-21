@@ -1,0 +1,100 @@
+////////////////////////////////////////
+// Common styles
+////////////////////////////////////////
+
+////////////////////////////////////////Variables
+
+// Colors
+// $c-selection_cl: #fff
+// $c-selection_bg: #000
+
+
+//////////////////////////////////////// Mixins and functions
+
+
+//////////////////////////////////////// Styles
+
+// *::selection
+//  background: $c-selection_bg
+//  color: $c-selection_cl
+
+// *::-moz-selection
+//  background: $c-selection_bg
+//  color: $c-selection_cl
+
+
+html
+  display: block
+  width: 100%
+
+
+// Visibility helpers
+
+//Extra large screens
+.is-hidden-screen-xl
+  +media-screen-max-xl
+    display: none !important
+
+.is-visible-screen-xl
+  +media-screen-min-xl
+    display: none !important
+
+//Large screens
+.is-hidden-screen-l-minor
+  +media-screen-max-l-minor
+    display: none !important
+
+.is-visible-screen-l-minor
+  +media-screen-min-l-minor
+    display: none !important
+
+.is-hidden-screen-l-major
+  +media-screen-max-l-major
+    display: none !important
+
+.is-visible-screen-l-major
+  +media-screen-min-l-major
+    display: none !important
+
+//Medium screens
+.is-hidden-screen-m-minor
+  +media-screen-max-m-minor
+    display: none !important
+
+.is-visible-screen-m-minor
+  +media-screen-min-m-minor
+    display: none !important
+
+.is-hidden-screen-m-major
+  +media-screen-max-m-major
+    display: none !important
+
+.is-visible-screen-m-major
+  +media-screen-min-m-major
+    display: none !important
+
+//Small screens
+.is-hidden-screen-s-minor
+  +media-screen-max-s-minor
+    display: none !important
+
+.is-visible-screen-s-minor
+  +media-screen-min-s-minor
+    display: none !important
+
+.is-hidden-screen-s-major
+  +media-screen-max-s-major
+    display: none !important
+
+.is-visible-screen-s-major
+  +media-screen-min-s-major
+    display: none !important
+
+//Extra small screens
+.is-hidden-screen-xs
+  +media-screen-max-xs
+    display: none !important
+
+.is-visible-screen-xs
+  +media-screen-min-xs
+    display: none !important

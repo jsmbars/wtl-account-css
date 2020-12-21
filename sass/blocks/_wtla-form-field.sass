@@ -1,0 +1,193 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Form field
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-form-field"
+
+#{$block}
+  position: relative
+  display: block
+  width: 100%
+
+  // $Form field MOD: justify center
+  &_justify_center
+
+  // $Form field STATE: error
+  &.is-error
+
+
+  // $Form field group
+  &__group
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+
+
+  // $Form field label
+  &__label
+    display: block
+    width: 100%
+    margin-bottom: 10px
+    font-family: $f-sans
+    font-size: 14px
+    color: $c-gray-extra-dark
+    font-weight: 400
+    line-height: 1
+    text-align: left
+
+    #{$block}_justify_center &
+      text-align: center
+
+    #{$block}__group &
+      flex-grow: 0
+      flex-shrink: 1
+      width: auto
+      margin-bottom: 0
+
+    &:first-child
+      #{$block}__group &
+        padding-right: 20px
+
+    &:last-child
+      #{$block}__group &
+        padding-left: 20px
+
+
+  // $Form field label text
+  &__label-text
+
+
+  // $Form field input
+  &__input
+    position: relative
+
+    #{$block}__group &
+      flex-grow: 1
+      flex-shrink: 1
+
+    & input
+      display: block
+      width: 100%
+      height: 40px
+      padding: 0 10px
+      font-family: $f-sans
+      font-size: 14px
+      color: $c-gray-ultra-dark
+      font-weight: 400
+      line-height: 1.25
+      border-radius: 2px
+      background-color: $c-white
+      border: 1px solid $c-gray-light
+      box-shadow: none
+
+      #{$block}_justify_center &
+        text-align: center
+
+      #{$block}.is-error &
+        border-color: $c-red-medium
+        color: $c-red-medium
+
+      &:invalid
+        box-shadow: none
+
+      &:focus
+        outline: none
+        box-shadow: 0 0 3px -1px $c-shadow-primary
+
+      &:disabled
+        background-color: $c-gray-extra-light
+        cursor: not-allowed
+
+      &:read-only
+        background-color: $c-gray-extra-light
+
+      &::-webkit-input-placeholder
+        color: $c-gray-medium !important
+        opacity:  1 !important
+
+        #{$block}.is-error &
+          color: $c-red-medium !important
+
+      &:-moz-placeholder
+        color: $c-gray-medium !important
+        opacity:  1 !important
+
+        #{$block}.is-error &
+          color: $c-red-medium !important
+
+      &::-moz-placeholder
+        color: $c-gray-medium !important
+        opacity:  1 !important
+
+        #{$block}.is-error &
+          color: $c-red-medium !important
+
+      &:-ms-input-placeholder
+        color: $c-gray-medium !important
+        opacity:  1 !important
+
+        #{$block}.is-error &
+          color: $c-red-medium !important
+
+      &::-ms-input-placeholder
+        color: $c-gray-medium !important
+        opacity:  1 !important
+
+        #{$block}.is-error &
+          color: $c-red-medium !important
+
+      &::placeholder
+        color: $c-gray-medium !important
+        opacity:  1 !important
+
+        #{$block}.is-error &
+          color: $c-red-medium !important
+
+
+  // $Form field input clear
+  &__input-clear
+    position: absolute
+    top: 1px
+    right: 1px
+    bottom: 1px
+    z-index: 10
+    display: block
+    width: 27px
+    margin: 0
+    padding: 0 0 0 5px
+    background-color: $c-white
+    border: none
+    transition: all .3s
+    cursor: pointer
+    color: $c-red-medium
+    text-align: left
+    opacity: .75
+
+    &:before
+      content: "\e908"
+      display: inline-block
+      font-family: icons
+      font-size: 12px
+      line-height: 1
+      font-weight: 400
+      color: inherit
+      vertical-align: middle
+
+    &:hover
+      text-decoration: none
+      opacity: 1
+
+    &:focus
+      outline: none

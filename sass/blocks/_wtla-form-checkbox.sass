@@ -1,0 +1,166 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Form checkbox
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-form-checkbox"
+
+#{$block}
+  display: inline-block
+
+  // $Form checkbox STATE: error
+  &.is-error
+
+
+  // $Form checkbox label
+  &__label
+    display: block
+    width: 100%
+    margin-bottom: 10px
+    font-family: $f-sans
+    font-size: 14px
+    color: $c-gray-extra-dark
+    font-weight: 400
+    line-height: 1
+    text-align: left
+
+
+  // $Form checkbox label text
+  &__label-text
+
+
+  // $Form checkbox value
+  // $Form checkbox input
+  // $Form checkbox input label
+  &__value,
+  &__input
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+
+
+  &__input
+    cursor: pointer
+
+    & input
+      display: none
+
+
+  // $Form checkbox input indicator
+  // $Form checkbox value indicator
+  &__input-indicator,
+  &__value-indicator
+    flex-grow: 0
+    flex-shrink: 0
+    position: relative
+    display: block
+
+    &:before
+      content: ""
+      box-sizing: border-box
+      display: block
+      width: 25px
+      height: 25px
+      background-color: $c-white
+      border: 1px solid $c-gray-light
+      border-radius: 2px
+
+      #{$block}.is-error &
+        border-color: $c-red-medium
+
+    &:after
+      content: "\e907"
+      box-sizing: border-box
+      position: absolute
+      top: 50%
+      left: 50%
+      display: block
+      font-family: icons
+      font-size: 10px
+      line-height: 1
+      color: $c-white
+      text-align: center
+      visibility: hidden
+      transform: translate(-50%, -50%)
+
+      #{$block}.is-error &
+        color: $c-red-medium
+
+
+  // $Form checkbox input indicator
+  &__input-indicator
+    #{$block}__input input:disabled ~ &
+      cursor: not-allowed
+
+    &:before
+      #{$block}__input input:checked ~ &
+        background-color: $c-primary-medium
+        border-color: transparent
+
+      #{$block}.is-error #{$block}__input input:checked ~ &
+        background-color: $c-white
+        border-color: $c-red-medium
+
+      #{$block}__input input:disabled ~ &
+        background-color: $c-gray-extra-light
+
+      #{$block}.is-error #{$block}__input input:disabled ~ &
+        background-color: $c-gray-extra-light
+        border-color: $c-red-medium
+
+    &:after
+      #{$block}__input input:checked ~ &
+        visibility: visible
+
+      #{$block}__input input:disabled ~ &
+        color: $c-gray-extra-dark
+
+      #{$block}.is-error #{$block}__input input:disabled ~ &
+        color: $c-red-medium
+
+
+  // $Form checkbox value indicator
+  &__value-indicator
+    &_type_checked
+      &:after
+        visibility: visible
+        color: $c-gray-extra-dark
+
+
+  // $Form checkbox input label
+  // $Form checkbox value label
+  &__input-label,
+  &__value-label
+    display: inline-block
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1
+    font-weight: 400
+    color: $c-gray-extra-dark
+    user-select: none
+
+    // $Form checkbox input label MOD: position left
+    // $Form checkbox value label MOD: position left
+    &_position_left
+      padding-right: 10px
+
+    // $Form checkbox input label MOD: position right
+    // $Form checkbox value label MOD: position right
+    &_position_right
+      padding-left: 10px
+
+
+  // $Form checkbox input label
+  &__input-label
+    #{$block}__input input:disabled ~ &
+      cursor: not-allowed

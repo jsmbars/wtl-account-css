@@ -1,0 +1,427 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Modal window
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-modal"
+
+#{$block}
+  position: relative
+  top: auto
+  left: auto
+  bottom: auto
+  right: auto
+  display: block
+  width: 100%
+  max-width: 960px
+  margin: 0 auto
+  border-radius: 8px
+  background-color: $c-white
+  box-shadow: 0 2px 8px -2px $c-shadow-primary
+
+  #{$block}-portal &
+    z-index: 10002
+
+  // $Modal window MOD: size xs
+  &_size_xs
+    max-width: 400px
+
+  // $Modal window MOD: size s-minor
+  &_size_s-minor
+    max-width: 480px
+
+  // $Modal window MOD: size s-major
+  &_size_s-major
+    max-width: 640px
+
+  // $Modal window MOD: size m-minor
+  &_size_m-minor
+    max-width: 800px
+
+  // $Modal window MOD: size m-major
+  &_size_m-major
+    max-width: 960px
+
+  // $Modal window MOD: size l-minor
+  &_size_l-minor
+    max-width: 1120px
+
+  // $Modal window MOD: size l-major
+  &_size_l-major
+    max-width: 1280px
+
+  // $Modal window MOD: space small
+  &_space_s
+    margin-top: 50px
+    margin-bottom: 50px
+
+    @media screen and (max-width: 640px), screen and (max-height: 640px)
+      margin-top: 25px
+      margin-bottom: 25px
+
+  // $Modal window MOD: space medium
+  &_space_m
+    margin-top: 100px
+    margin-bottom: 100px
+
+    @media screen and (max-width: 640px), screen and (max-height: 640px)
+      margin-top: 50px
+      margin-bottom: 50px
+
+    @media screen and (max-width: 480px), screen and (max-height: 480px)
+      margin-top: 25px
+      margin-bottom: 25px
+
+  // $Modal window MOD: space large
+  &_space_l
+    margin-top: 200px
+    margin-bottom: 200px
+
+    @media screen and (max-width: 640px), screen and (max-height: 640px)
+      margin-top: 100px
+      margin-bottom: 100px
+
+    @media screen and (max-width: 480px), screen and (max-height: 480px)
+      margin-top: 50px
+      margin-bottom: 50px
+
+
+  // $Modal window close
+  &__close
+    position: absolute
+    top: 15px
+    right: 15px
+    z-index: 10003
+    display: block
+    width: 30px
+    height: 30px
+    margin: 0
+    padding: 0
+    border: none
+    background-color: transparent
+    text-align: center
+    cursor: pointer
+    outline: none
+
+    &:after
+      content: '\e901'
+      font-family: 'icons'
+      font-size: 18px
+      line-height: 30px
+      color: $c-gray-ultra-dark
+      transition: all .3s
+
+    &:hover
+      &:after
+        opacity: .75
+
+
+  // $Modal window header
+  // $Modal window footer
+  &__header,
+  &__footer
+    position: relative
+    display: block
+    width: 100%
+    padding: 20px
+    background-color: $c-gray-hyper-light
+
+    @media screen and (max-width: 480px), screen and (max-height: 480px)
+      padding: 20px 15px
+
+    &:only-child
+      background-color: $c-white
+
+
+  // $Modal window header
+  &__header
+    border-top-right-radius: 8px
+    border-top-left-radius: 8px
+
+    &_adjust_close
+      padding-right: 50px
+
+    &_justify_center
+      text-align: center
+
+
+  // Modal window header group
+  &__header-group
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Modal window footer
+  &__footer
+    border-bottom-right-radius: 8px
+    border-bottom-left-radius: 8px
+
+    &_justify_center
+      text-align: center
+
+
+  // Modal window footer group
+  &__footer-group
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Modal window content
+  &__content
+    display: block
+    width: 100%
+    padding: 20px
+
+    @media screen and (max-width: 480px), screen and (max-height: 480px)
+      padding: 20px 15px
+
+    // $Modal window content MOD: justify center
+    &_justify_center
+      text-align: center
+
+
+  // $Modal window scroll
+  &__scroll
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 100%
+    max-height: 100%
+    overflow: auto
+
+
+  // $Modal window content group
+  &__group
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    // $Modal window content group MOD: justify center
+    &_justify_center
+      text-align: center
+
+
+  // $Modal window actions
+  &__actions
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    // $Modal window actions MOD: justify start
+    &_justify_start
+      justify-content: flex-start
+
+    // $Modal window actions MOD: justify end
+    &_justify_end
+      justify-content: flex-end
+
+
+  // $Modal window action
+  &__action
+    flex-grow: 0
+    flex-shrink: 1
+
+    &:not(:last-child)
+      margin-right: 20px
+
+    &:not(:only-child)
+      min-width: 120px
+
+
+  // $Modal window image
+  &__image
+    display: inline-block
+    width: 100%
+    max-width: 200px
+    margin-bottom: 20px
+
+    @media screen and (max-width: 480px), screen and (max-height: 480px)
+      max-width: 150px
+
+    // $Modal window image size extra small
+    &_size_xs
+      max-width: 100px
+
+      @media screen and (max-width: 480px), screen and (max-height: 480px)
+        max-width: 100px
+
+    // $Modal window image size small
+    &_size_s
+      max-width: 150px
+
+      @media screen and (max-width: 480px), screen and (max-height: 480px)
+        max-width: 100px
+
+    // $Modal window image size large
+    &_size_l
+      max-width: 250px
+
+      @media screen and (max-width: 480px), screen and (max-height: 480px)
+        max-width: 200px
+
+    // $Modal window image size auto
+    &_size_auto
+      width: auto
+      max-width: 100%
+
+      @media screen and (max-width: 480px), screen and (max-height: 480px)
+        max-width: 100%
+
+    // $Modal window image size actual
+    &_size_actual
+      width: auto
+      max-width: none
+
+      @media screen and (max-width: 480px), screen and (max-height: 480px)
+        max-width: none
+
+
+  // $Modal window title
+  &__title
+    font-family: $f-sans
+    font-size: 24px
+    line-height: 1
+    font-weight: 600
+    color: $c-gray-ultra-dark
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Modal window title wrap
+  &__title-wrap
+    word-wrap: break-word
+    hyphens: auto
+
+
+  // $Modal window title bold
+  &__title-bold
+    font-weight: 600
+
+
+  // $Modal window title light
+  &__title-light
+    font-weight: 300
+
+
+  // $Modal window subtitle
+  &__subtitle
+    font-family: $f-sans
+    font-size: 18px
+    line-height: 1.25
+    color: $c-gray-dark
+    font-weight: 600
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+  // $Modal window subtitle bold
+  &__subtitle-bold
+    font-weight: 600
+
+
+  // $Modal window subtitle light
+  &__subtitle-light
+    font-weight: 300
+
+
+  // $Modal window subtitle line
+  &__subtitle-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+
+  // $Modal window subtitle wrap
+  &__subtitle-wrap
+    word-wrap: break-word
+    hyphens: auto
+
+
+  // $Modal window text
+  &__text
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1.25
+    color: $c-gray-ultra-dark
+    font-weight: 400
+
+
+  // $Modal window text wrap
+  &__text-wrap
+    word-wrap: break-word
+    hyphens: auto
+
+
+  // $Modal window text bold
+  &__text-bold
+    font-weight: 600
+
+
+  // $Modal window text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Modal window link
+  &__link
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1
+    font-weight: 400
+    color: $c-primary-medium
+    text-decoration: none
+    opacity: 1
+    transition: all .3s
+
+    &:hover
+      opacity: 0.75
+
+    // $Modal window link NOD: type inline
+    &_type_inline
+      font-size: inherit
+      text-decoration: underline
+
+      &:hover
+        text-decoration: none
+        opacity: 1
+
+
+  @at-root
+    // $Modal window portal
+    &-portal
+
+
+    // $Modal window overlay
+    &-overlay
+      position: fixed
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 10001
+      display: block
+      padding: 0 10px
+      overflow-x: hidden
+      overflow-y: auto
+      background-color: rgba(0,0,0,.75)

@@ -1,0 +1,155 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Page header
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".wtla-page-header"
+
+#{$block}
+  position: relative
+  z-index: 1
+  display: block
+  width: 100%
+  background-color: $c-gray-hyper-dark
+
+
+  // $Page header inner
+  &__inner
+    display: block
+    width: 100%
+    max-width: 1000px
+    margin: 0 auto
+    padding: 10px 20px
+
+    +media-screen-max-s-major
+      padding-left: 15px
+      padding-right: 15px
+
+    +media-screen-max-s-minor
+      padding-left: 10px
+      padding-right: 10px
+
+
+  // $Page header group
+  &__group
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 100%
+
+
+  // $Page header info
+  &__info
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    text-align: center
+
+
+  // $Page header logo
+  &__logo
+    display: inline-block
+    text-decoration: none
+    vertical-align: top
+
+    &:focus
+      outline: none
+
+
+  // $Page header logo image
+  &__logo-image
+    display: block
+    height: 40px
+
+
+  // $Page header action
+  &__action
+    display: inline-block
+    white-space: nowrap
+    font-family: $f-sans
+    font-size: 16px
+    line-height: 1
+    color: $c-white
+    border: none
+    background-color: transparent
+    cursor: pointer
+    transition: all .3s
+
+    +media-screen-max-s-major
+      font-size: 14px
+
+    &:before,
+    &:after
+      display: inline-block
+      font-family: icons
+      color: $c-gray-ultra-light
+      vertical-align: middle
+      transition: .3s
+
+    &:before
+      margin-right: 10px
+
+    &:after
+      margin-left: 10px
+
+    &:hover
+      color: $c-secondary-medium
+
+      &:before,
+      &:after
+        color: $c-secondary-medium
+
+    &:focus
+      outline: none
+
+    // $Page header action MOD: role previous
+    &_role_previous
+      position: absolute
+      top: 50%
+      left: 0
+      text-align: left
+      transform: translateY(-50%)
+
+      &:before
+        content: '\e911'
+        font-size: 30px
+        line-height: 30px
+
+        +media-screen-max-s-major
+          font-size: 25px
+
+    // $Page header action MOD: role logout
+    &_role_logout
+      position: absolute
+      top: 50%
+      right: 0
+      text-align: right
+      transform: translateY(-50%)
+
+      &:after
+        content: '\e91d'
+        font-size: 15px
+        line-height: 30px
+
+
+  // $Page header action text
+  &__action-text
+    display: inline-block
+    font-family: inherit
+    font-size: inherit
+    line-height: inherit
+    color: inherit
+    vertical-align: middle
+    white-space: normal
+
